@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!–[if IE 7 ]> <html class="no-js ie7"> <![endif]–>
+<!–[if IE 8 ]> <html class="no-js ie8"> <![endif]–>
+<!–[if IE 9 ]> <html class="no-js ie9"> <![endif]–>
+<!–[if (gt IE 9)|!(IE)]><!–> <html class="no-js"> <!–<![endif]–>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Story Game Engine</title>
+    <meta name="description" content="A game engine aimed at creating custom story-based games to be played in your browser.">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/vendor/normalize.css">
+    <link rel="stylesheet" href="font/asap/asap.css">
+    <link rel="stylesheet" href="http://s3.amazonaws.com/icomoon.io/31534/StoryEngine/style.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script src="js/vendor/jquery.nicescroll.js"></script>
+    <script src="js/vendor/jquery.number.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div class="sidebar left">
+        <div class="player">
+            <span class="button icon-cog options top-left" title="Options"></span>
+            <div class="portrait">
+                <img src="http://lorempixel.com/200/200/cats/1" alt="Player portrait" title="Character Name" />
+                <h2><span class="first">Character</span> <span class="last">Name</span></h2>
+                <span class="race">Human</span> <span class="gender">Male</span>
+            </div>
+            <ul class="stats primary">
+                <li class="stat health" data-current="238" data-max="300">
+                    <span class="bar"></span>
+                    <span class="title">Health</span>
+                    <span class="value" data-max="300">238</span>
+                </li>
+                <li class="stat mana" data-current="141" data-max="200">
+                    <span class="bar"></span>
+                    <span class="title">Mana</span>
+                    <span class="value" data-max="200">141</span>
+                </li>
+                <li class="stat energy" data-current="73" data-max="100">
+                    <span class="bar"></span>
+                    <span class="title">Energy</span>
+                    <span class="value" data-max="100">73</span>
+                </li>
+            </ul>
+            <ul class="stats secondary columns two">
+                <li class="stat stamina" data-current="48" data-max="100">
+                    <span class="bar"></span>
+                    <span class="title">Stamina</span>
+                    <span class="value"><span class="curr">48</span><span class="divider">/</span><span class="max">100</span></span>
+                </li>
+                <li class="stat endurance" data-current="35" data-max="100">
+                    <span class="bar"></span>
+                    <span class="title">Endurance</span>
+                    <span class="value"><span class="curr">35</span><span class="divider">/</span><span class="max">100</span></span>
+                </li>
+                <li class="stat intelligence" data-current="41" data-max="100">
+                    <span class="bar"></span>
+                    <span class="title">Intelligence</span>
+                    <span class="value"><span class="curr">41</span><span class="divider">/</span><span class="max">100</span></span>
+                </li>
+                <li class="stat wisdom" data-current="100" data-max="100">
+                    <span class="bar"></span>
+                    <span class="title">Wisdom</span>
+                    <span class="value"><span class="curr">100</span><span class="divider">/</span><span class="max">100</span></span>
+                </li>
+            </ul>
+        </div>
+        <ul class="party">
+            <li class="unit" data-current="41" data-max="100" data-name="Party member #1">
+                <img src="http://lorempixel.com/25/25/cats/2" alt="Unit #1 portrait" title="Unit #1 portrait" />
+                <div class="bar health"><div class="fill"></div></div>
+            </li>
+            <li class="unit" data-current="79" data-max="100" data-name="Party member #2">
+                <img src="http://lorempixel.com/25/25/cats/3" alt="Unit #2 portrait" title="Unit #2 portrait" />
+                <div class="bar health"><div class="fill"></div></div>
+            </li>
+            <li class="unit" data-current="100" data-max="100" data-name="Party member #3">
+                <img src="http://lorempixel.com/25/25/cats/4" alt="Unit #1 portrait" title="Unit #1 portrait" />
+                <div class="bar health"><div class="fill"></div></div>
+            </li>
+            <li class="unit" data-current="12" data-max="100" data-name="Party member #4">
+                <img src="http://lorempixel.com/25/25/cats/5" alt="Unit #2 portrait" title="Unit #2 portrait" />
+                <div class="bar health"><div class="fill"></div></div>
+            </li>
+        </ul>
+        <div class="bottom">
+            <ul class="menu">
+                <li class="character">
+                    <i class="icon-user"></i>
+                    <span class="title">Character</span>
+                </li>
+                <li class="inventory">
+                    <i class="icon-dropbox"></i>
+                    <span class="title">Inventory</span>
+                </li>
+                <li class="skills">
+                    <i class="icon-star"></i>
+                    <span class="title">Skills</span>
+                </li>
+                <li class="quests">
+                    <i class="icon-book"></i>
+                    <span class="title">Quests</span>
+                </li>
+                <li class="keyring">
+                    <i class="icon-key"></i>
+                    <span class="title">Keyring</span>
+                </li>
+                <li class="map">
+                    <i class="icon-map"></i>
+                    <span class="title">Map</span>
+                </li>
+                <li class="settings">
+                    <i class="icon-cog"></i>
+                    <span class="title">Settings</span>
+                </li>
+            </ul>
+            <div class="timedate-money">
+                    <span class="timedate">
+                        <span class="time">8:15 PM</span>
+                        <span class="date">Feb. 10 2014</span>
+                    </span>
+                    <span class="money">
+                        58464
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content" id="top">
+            <!-- Sample Content to Plugin to Template -->
+            <h1>CSS Basic Elements</h1>
+
+            <p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
+
+            <hr />
+
+            <h1 id="headings">Headings</h1>
+
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+
+            <hr />
+
+            <h1 id="paragraph">Paragraph</h1>
+
+            <img style="float:right" src="http://lorempixel.com/250/125/technics/" alt="Technics" />
+            <p>Lorem ipsum dolor sit amet, <a href="#" title="test link">test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+
+            <p>Lorem ipsum dolor sit amet, <em>emphasis</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
+
+            <hr />
+
+            <h1 id="list_types">List Types</h1>
+
+            <h3>Definition List</h3>
+            <dl>
+                <dt>Definition List Title</dt>
+                <dd>This is a definition list division.</dd>
+            </dl>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+            </ol>
+
+            <h3>Unordered List</h3>
+            <ul>
+                <li>List Item 1</li>
+                <li>List Item 2</li>
+                <li>List Item 3</li>
+            </ul>
+
+            <hr />
+
+            <h1 id="form_elements">Fieldsets, Legends, and Form Elements</h1>
+
+            <fieldset>
+                <legend>Legend</legend>
+
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
+
+                <form>
+                    <h2>Form Element</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
+
+                    <p><label for="text_field">Text Field:</label><br />
+                        <input type="text" id="text_field" /></p>
+
+                    <p><label for="text_area">Text Area:</label><br />
+                        <textarea id="text_area"></textarea></p>
+
+                    <p>
+                        <label>
+                            Select Element:<br />
+                            <select id="select_element" name="select_element">
+                                <optgroup label="Option Group 1">
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </optgroup>
+                                <optgroup label="Option Group 2">
+                                    <option value="1">Option 1</option>
+                                    <option value="2">Option 2</option>
+                                    <option value="3">Option 3</option>
+                                </optgroup>
+                            </select>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            Radio Buttons:<br />
+                            <label><input type="radio" class="radio" name="radio_button" value="radio_1" /> Radio 1</label><br/>
+                            <label><input type="radio" class="radio" name="radio_button" value="radio_2" /> Radio 2</label><br/>
+                            <label><input type="radio" class="radio" name="radio_button" value="radio_3" /> Radio 3</label><br/>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            Checkboxes:<br />
+                            <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_1" /> Radio 1</label><br/>
+                            <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_2" /> Radio 2</label><br/>
+                            <label><input type="checkbox" class="checkbox" name="checkboxes" value="check_3" /> Radio 3</label><br/>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>
+                            Password:<br />
+                            <input id="password" type="password" class="password" name="password" />
+                        </label>
+                    </p>
+
+                    <p>
+                        <label>File Input:<br />
+                            <input type="file" class="file" name="file" />
+                        </label>
+                    </p>
+
+                    <p><input class="button" type="reset" value="Clear" /> <input class="button" type="submit" value="Submit" />
+                    </p>
+
+                </form>
+
+            </fieldset>
+
+            <hr />
+
+            <h1 id="tables">Tables</h1>
+
+            <table cellspacing="0" cellpadding="0">
+                <tr>
+                    <th>Table Header 1</th><th>Table Header 2</th><th>Table Header 3</th>
+                </tr>
+                <tr>
+                    <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+                </tr>
+                <tr class="even">
+                    <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+                </tr>
+                <tr>
+                    <td>Division 1</td><td>Division 2</td><td>Division 3</td>
+                </tr>
+
+            </table>
+
+            <hr />
+
+            <h1 id="misc">Misc Stuff - abbr, acronym, pre, code, sub, sup, etc.</h1>
+
+            <p>Lorem <sup>superscript</sup> dolor <sub>subscript</sub> amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. <cite>cite</cite>. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <abbr title="National Basketball Association">NBA</abbr> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  <abbr title="Avenue">AVE</abbr></p>
+
+            <pre><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <abbr title="National Basketball Association">NBA</abbr> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  <abbr title="Avenue">AVE</abbr></p></pre>
+
+            <blockquote>
+                "This stylesheet is going to help so freaking much." <br />-Blockquote
+            </blockquote>
+        </div>
+    </div>
+    <div class="sidebar right">
+        <div class="minimap">
+            <span class="title">Minimap</span>
+        </div>
+    </div>
+    <ul class="bottombar">
+        <li><div class="button" data-key="49">Option #01</div></li>
+        <li><div class="button" data-key="50">Option #02</div></li>
+        <li><div class="button" data-key="51">Option #03</div></li>
+        <li><div class="button" data-key="52">Option #04</div></li>
+        <li><div class="button" data-key="53">Option #05</div></li>
+        <li><div class="button" data-key="81">Option #06</div></li>
+        <li><div class="button" data-key="87">Option #07</div></li>
+        <li><div class="button" data-key="69">Option #08</div></li>
+        <li><div class="button" data-key="82">Option #09</div></li>
+        <li><div class="button" data-key="84">Option #10</div></li>
+        <li><div class="button" data-key="65">Option #11</div></li>
+        <li><div class="button" data-key="83">Option #12</div></li>
+        <li><div class="button" data-key="68">Option #13</div></li>
+        <li><div class="button" data-key="70">Option #14</div></li>
+        <li><div class="button" data-key="71">Option #15</div></li>
+    </ul>
+</body>
+</html>
